@@ -2,13 +2,13 @@
   "name": "template-typescript-express",
   "version": "1.0.0",
   "description": "",
+  "type": "commonjs",
   "main": "src/app.ts",
   "scripts": {
     "start": "NODE_ENV=development node_modules/.bin/nodemon src/app-api.ts",
-    "lint": "eslint './src/**/*.{ts,tsx}'",
-    "test:prepare": "./tests/prepare-test.sh",
-    "test:start": "NODE_ENV=test node_modules/.bin/mocha --exit --timeout 5000 -- \"tests/**/*.test.js\"",
-    "test": "npm run test:prepare; npm run test:start",
+    "lint": "eslint './src/**/*.{ts,tsx}' 'test/**/*.ts'",
+    "test": "ts-mocha -p tsconfig.json test/**/*.ts",
+    "testx": "mocha test/**/*.ts",
     "start:ts": "ts-node src/app-api.ts",
     "build": "tsc"
   },
@@ -26,13 +26,16 @@
     "sequelize": "6.37.7"
   },
   "devDependencies": {
+    "@types/chai": "5.2.1",
     "@types/cors": "2.8.17",
     "@types/express": "5.0.1",
     "@types/lodash": "4.17.16",
+    "@types/mocha": "10.0.10",
     "@types/node": "22.14.1",
+    "@types/supertest": "6.0.3",
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "chai": "5.2.0",
+    "chai": "4.5.0",
     "eslint": "8.57.1",
     "eslint-config-standard-with-typescript": "43.0.1",
     "eslint-plugin-import": "2.31.0",
@@ -41,6 +44,7 @@
     "mocha": "11.1.0",
     "nodemon": "3.1.9",
     "supertest": "7.1.0",
+    "ts-mocha": "11.1.0",
     "ts-node": "10.9.2",
     "typescript": "5.8.3"
   }

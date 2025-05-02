@@ -1,6 +1,11 @@
+import type { Request, Response } from 'express'
 import * as Server from './app/server'
 
 const isListen = true
+
+Server.app.get('/', (req: Request, res: Response) => {
+  res.send('Hello World!')
+})
 
 if (isListen) {
   const port = 3001
