@@ -5,7 +5,7 @@ import BodyParser from 'body-parser'
 const _server = Express()
 
 const corsOptions = {
-  origin: '*'
+  origin: process.env.HTTP_CORS_ORIGIN ?? '*'
 }
 
 _server.use(Cors(corsOptions))
