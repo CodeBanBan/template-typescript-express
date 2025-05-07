@@ -9,7 +9,7 @@ Server.app.get('/', (req: Request, res: Response) => {
 })
 
 if (isListen) {
-  const port = 3001
+  const port = Number(process.env.API_PORT) ?? 3001
 
   Server.app.listen(port, () => {
     console.log(`API Running on port: ${port}`)
