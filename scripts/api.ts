@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express'
-import './app/bootstrap'
-import * as Server from './app/server'
+import '../app/bootstrap'
+import * as Server from '../http/server'
 
 const isListen = true
 

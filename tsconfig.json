@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./_dist",
     "rootDir": ".",
 
     /* Language and Environment */
@@ -19,7 +19,9 @@
     "skipLibCheck": true
   },
   "include": [
-    "src",
+    "app",
+    "http",
+    "scripts",
     "test"
   ],
   "exclude": [
