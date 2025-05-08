@@ -2,6 +2,7 @@ import Express, {type Request, type Response} from 'express'
 import Cors from 'cors'
 import BodyParser from 'body-parser'
 import '../app/bootstrap'
+import * as Routes from './routes'
 
 const _server = Express()
 
@@ -10,11 +11,8 @@ const corsOptions = {
 }
 
 _server.use(Cors(corsOptions))
-
 _server.use(BodyParser.json({ limit: '15mb' }))
 
-_server.get('/', (req: Request, res: Response) => {
-  res.json({ data: 'hello world'})
-})
+_server.use('', Routes.router)
 
 export const app = _server
