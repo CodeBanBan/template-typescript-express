@@ -22,7 +22,7 @@
     "app",
     "http",
     "scripts",
-    "test"
+    "tests"
   ],
   "exclude": [
     "node_modules"

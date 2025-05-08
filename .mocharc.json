@@ -2,5 +2,5 @@
   "loader": "ts-node/esm",
   "extension": ["ts"],
   "reporter": "spec",
-  "spec": ["test/**/*.ts"]
+  "spec": ["tests/**/*.ts"]
 }
