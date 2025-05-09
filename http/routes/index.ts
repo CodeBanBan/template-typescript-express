@@ -3,6 +3,6 @@ import * as HelloRoute from './hello-route'
 
 const _router = Express()
 
-_router.use('/', HelloRoute.router)
+_router.use('/hello', HelloRoute.router)
 
 export const router = _router
