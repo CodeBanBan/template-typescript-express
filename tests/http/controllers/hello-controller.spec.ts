@@ -47,4 +47,18 @@ describe('Hello Controller', () => {
       assert.equal(result.message, 'hello world john doe')
     })
   })
+
+  describe('GET /hello/fail test fail function', () => {
+    it('should return error', async () => {
+      const res = await RequestApp
+        .get('/hello/fail')
+        .set('Accept', 'application/json')
+        .expect(HttpStatus.IM_A_TEAPOT)
+
+      const result = res.body
+
+      assert.equal(result.name, 'ValidateError')
+      assert.equal(result.error, 'This is fail function')
+    })
+  })
 })
