@@ -7,6 +7,6 @@ module.exports = {
     mocha: true
   },
   rules: {
-    // 'object-shorthand': 'off'
+    'object-shorthand': 'off'
   }
 }

@@ -9,9 +9,9 @@ export class BaseHttpError extends Error {
     super(message)
 
     this.name = name
-    this.status = (status) ? status : this.status
+    this.status = status ?? this.status
 
-    if (Error.captureStackTrace) {
+    if (Error.captureStackTrace !== null) {
       Error.captureStackTrace(this, BaseHttpError)
     }
   }
