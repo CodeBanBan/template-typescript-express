@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import type { Request, Response } from 'express'
 import * as Logger from '../../app/helpers/logger-helper'
 import { HelloDomain } from '../../app/domains/hello-domain'
 

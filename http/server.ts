@@ -1,4 +1,4 @@
-import Express, {type Request, type Response} from 'express'
+import Express from 'express'
 import Cors from 'cors'
 import BodyParser from 'body-parser'
 import '../app/bootstrap'
