@@ -10,10 +10,10 @@ export class HelloDomain {
   helloWithName (name: string = '[No Name]'): string {
     this._debugHello(name)
 
-    return `hello world ${name}`
+    return `hello world ${name}`.trim()
   }
 
   private _debugHello (name: string): void {
-    this.debugText = (name !== null && name !== '') ? name : this._defaultName
+    this.debugText = (name !== '') ? name : this._defaultName
   }
 }
