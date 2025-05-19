@@ -12,7 +12,7 @@ describe('Hello Domain', () => {
     done()
   })
 
-  describe('helloWithName', () => {
+  describe('#helloWithName', () => {
     it('should return "hello world [No Name]" when no name', async () => {
       const result: string = helloDomain.helloWithName()
       const debugText: string = helloDomain.debugText

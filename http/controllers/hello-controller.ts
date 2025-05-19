@@ -1,9 +1,9 @@
 import type { NextFunction, Request, Response } from 'express'
-import * as _ from 'lodash'
 import { status as HttpStatus } from 'http-status'
-import { ValidateError } from '../errors/validate-error'
 import * as Logger from '../../app/helpers/logger-helper'
 import { HelloDomain } from '../../app/domains/hello-domain'
+import { CreateReq } from '../beans/request/hello/create-req'
+import { ValidateError } from '../errors/validate-error'
 
 export async function hello (req: Request, res: Response): Promise<void> {
   Logger.info('Log Info: hello controller')
@@ -19,10 +19,11 @@ export async function hello (req: Request, res: Response): Promise<void> {
 
 export async function create (req: Request, res: Response): Promise<void> {
   Logger.info(req.body)
-  const name: string = _.get(req, 'body.name', '[No Name Body]')
+  const createReq: CreateReq = new CreateReq(req.body)
 
   res.json({
-    message: `hello world ${name}`
+    message: `hello world ${createReq.name}`,
+    bodyReq: createReq
   })
 }
 

@@ -32,7 +32,7 @@ describe('Hello Controller', () => {
   })
 
   describe('POST /hello create message', () => {
-    it('should return json message hello world [No Name]', async () => {
+    it('should return json message hello world john doe with default value', async () => {
       const body = {
         name: 'john doe'
       }
@@ -45,6 +45,33 @@ describe('Hello Controller', () => {
 
       const result = res.body
       assert.strictEqual(result.message, 'hello world john doe')
+
+      const bodyReq: any = result.bodyReq
+      assert.strictEqual(bodyReq.name, 'john doe')
+      assert.strictEqual(bodyReq.age, 0)
+      assert.strictEqual(bodyReq.active, false)
+    })
+
+    it('should return json message hello world john doe', async () => {
+      const body = {
+        name: 'john doe',
+        age: '99',
+        active: '1'
+      }
+
+      const res = await RequestApp
+        .post('/hello')
+        .send(body)
+        .set('Accept', 'application/json')
+        .expect(HttpStatus.OK)
+
+      const result = res.body
+      assert.strictEqual(result.message, 'hello world john doe')
+
+      const bodyReq: any = result.bodyReq
+      assert.strictEqual(bodyReq.name, 'john doe')
+      assert.strictEqual(bodyReq.age, 99)
+      assert.strictEqual(bodyReq.active, true)
     })
   })
 
