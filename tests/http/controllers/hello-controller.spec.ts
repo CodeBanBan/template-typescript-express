@@ -17,7 +17,7 @@ describe('Hello Controller', () => {
         .expect(HttpStatus.OK)
 
       const result = res.body
-      assert.equal(result.message, 'hello world [No Name]')
+      assert.strictEqual(result.message, 'hello world [No Name]')
     })
 
     it('should return json message hello world john', async () => {
@@ -27,7 +27,7 @@ describe('Hello Controller', () => {
         .expect(HttpStatus.OK)
 
       const result = res.body
-      assert.equal(result.message, 'hello world john')
+      assert.strictEqual(result.message, 'hello world john')
     })
   })
 
@@ -44,7 +44,7 @@ describe('Hello Controller', () => {
         .expect(HttpStatus.OK)
 
       const result = res.body
-      assert.equal(result.message, 'hello world john doe')
+      assert.strictEqual(result.message, 'hello world john doe')
     })
   })
 
@@ -57,8 +57,8 @@ describe('Hello Controller', () => {
 
       const result = res.body
 
-      assert.equal(result.name, 'ValidateError')
-      assert.equal(result.error, 'This is fail function')
+      assert.strictEqual(result.name, 'ValidateError')
+      assert.strictEqual(result.error, 'This is fail function')
     })
   })
 })

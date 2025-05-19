@@ -17,24 +17,24 @@ describe('Hello Domain', () => {
       const result: string = helloDomain.helloWithName()
       const debugText: string = helloDomain.debugText
 
-      assert.equal(result, 'hello world [No Name]')
-      assert.equal(debugText, '[No Name]')
+      assert.strictEqual(result, 'hello world [No Name]')
+      assert.strictEqual(debugText, '[No Name]')
     })
 
     it('should return "hello world Boba" when name is "Boba"', async () => {
       const result: string = helloDomain.helloWithName('Boba')
       const debugText: string = helloDomain.debugText
 
-      assert.equal(result, 'hello world Boba')
-      assert.equal(debugText, 'Boba')
+      assert.strictEqual(result, 'hello world Boba')
+      assert.strictEqual(debugText, 'Boba')
     })
 
     it('should return "hello world John Doe" when empty name', async () => {
       const result: string = helloDomain.helloWithName('')
       const debugText: string = helloDomain.debugText
 
-      assert.equal(result, 'hello world')
-      assert.equal(debugText, 'John Doe')
+      assert.strictEqual(result, 'hello world')
+      assert.strictEqual(debugText, 'John Doe')
     })
 
     it('should return debugText "new-text" when new Domain with "new-text"', async () => {
@@ -43,8 +43,8 @@ describe('Hello Domain', () => {
       const result: string = domain.helloWithName('')
       const debugText: string = domain.debugText
 
-      assert.equal(result, 'hello world')
-      assert.equal(debugText, 'new-text')
+      assert.strictEqual(result, 'hello world')
+      assert.strictEqual(debugText, 'new-text')
     })
   })
 })
