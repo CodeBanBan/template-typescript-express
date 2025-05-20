@@ -9,7 +9,9 @@
     "start:ts": "ts-node scripts/api.ts",
     "lint": "eslint '**/*.ts'",
     "test": "NODE_ENV=test ts-mocha -p tsconfig.json",
-    "build": "rm -rf _dist & tsc -p tsconfig.build.json"
+    "build": "rm -rf _dist & tsc -p tsconfig.build.json",
+    "task:hello:start": "NODE_ENV=development ts-node scripts/exec-task.ts hello-task",
+    "runner:hello:start": "NODE_ENV=development ts-node scripts/runner-hello-task.ts"
   },
   "author": "",
   "license": "ISC",
