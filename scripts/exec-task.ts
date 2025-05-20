@@ -1,9 +1,10 @@
 import * as Logger from '../app/helpers/logger-helper'
 import { type BaseTask } from '../tasks/base-task'
 
-async function runTask(taskName: string) {
+async function runTask (taskName: string): Promise<void> {
   const module = await import(`../tasks/${taskName}`)
-  const task: BaseTask = new module.default()
+  const TaskClass = module.default
+  const task: BaseTask = new TaskClass()
 
   if (typeof task?.exec !== 'function') {
     throw new Error(`No exec() found in ${taskName}`)
@@ -12,7 +13,7 @@ async function runTask(taskName: string) {
   task?.exec()
 }
 
-const taskName = process.argv[2]; // อ่านจาก command line arg
+const taskName = process.argv[2]
 
 Logger.info(`===> Task ${taskName}: start`)
 
