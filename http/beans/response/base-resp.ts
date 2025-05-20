@@ -1,6 +1,7 @@
 import { BaseAppBean } from '../../../app/beans/base-app-bean'
 
+const HTTP_APP_VERSION = process.env.HTTP_APP_VERSION ?? 'dev'
+
 export class BaseResp extends BaseAppBean {
-  // Todo: refactor use env
-  public readonly _appVersion: string = 'dev'
+  public readonly _appVersion: string = HTTP_APP_VERSION
 }
