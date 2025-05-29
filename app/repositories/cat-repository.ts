@@ -2,12 +2,14 @@ import { QueryTypes } from 'sequelize'
 import * as Db from '../models/db'
 import { type CatDto, CatModel } from '../models/core/cat-model'
 
-export async function add (name: string): Promise<void> {
+export async function add (name: string): Promise<CatDto> {
   const params = {
     name
   }
 
-  await CatModel.main.create(params)
+  const result = await CatModel.main.create(params)
+
+  return result
 }
 
 export async function list (): Promise<CatDto[]> {

@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { status as HttpStatus } from 'http-status'
-import { RequestApp } from '../test-helper'
+import { RequestApp } from '../http-test-helper'
 
 describe('Hello Controller', () => {
   before(async () => {})
