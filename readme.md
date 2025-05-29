@@ -1,4 +1,9 @@
 
+## Branch Detail
+- `main`: merge all branch
+- `base`: base structure and express
+- `mysql`: add feature connect mysql with Sequelize
+
 ## Project Structure
 - `_dist` Compile Typescript
 - `app` Business Logic
