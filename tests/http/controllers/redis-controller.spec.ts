@@ -1,6 +1,6 @@
 import { assert } from 'chai'
 import { status as HttpStatus } from 'http-status'
-import { RequestApp } from '../test-helper'
+import { RequestApp } from '../http-test-helper'
 import { resetRedisTest } from '../../test-helper'
 
 describe('Redis Controller', () => {
