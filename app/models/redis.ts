@@ -9,9 +9,9 @@ export const redis0 = new Redis({
 })
 
 redis0.on('connect', () => {
-  console.log('✅ Connected to Redis');
-});
+  console.log('✅ Connected to Redis')
+})
 
 redis0.on('error', (err) => {
-  console.error('❌ Redis error:', err);
-});
+  console.error('❌ Redis error:', err)
+})
