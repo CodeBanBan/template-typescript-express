@@ -3,6 +3,7 @@
 - `main`: merge all branch
 - `base`: base structure and express
 - `mysql`: add feature connect mysql with Sequelize
+- `redis`: add feature connect redis with ioredis
 
 ## Project Structure
 - `_dist` Compile Typescript
