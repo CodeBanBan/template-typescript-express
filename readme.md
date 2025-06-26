@@ -22,6 +22,6 @@
 - use `scripts/task-exec.ts` for run task
 - pass task-name param for run task
 - eg. `ts-node scripts/exec-task.ts hello-task`
-- `task-exec` will dynamic load module and run function `exec`
-- `xxx-task` must extend `base-task` and implement function `exec`
-- `base-task` will autoload app bootstrap
+  - `task-exec` will dynamic load module and run function `exec`
+  - `xxx-task` must extend `base-task` and implement function `exec`
+  - `base-task` will autoload app bootstrap
