@@ -15,8 +15,7 @@
 - `test` unit test
 
 ## Package.json
-- chai 4.x for CommonJS for this template use this version
-- chai 5.x for ESModule
+- ...
 
 ## Tasks
 - use `scripts/task-exec.ts` for run task

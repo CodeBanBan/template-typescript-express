@@ -115,7 +115,8 @@
   "include": [
     "app",
     "http",
-    "scripts"
+    "scripts",
+    "tasks"
   ],
   "exclude": [
     "tests",
