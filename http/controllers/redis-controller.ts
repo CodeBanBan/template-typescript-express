@@ -9,7 +9,7 @@ export async function getSample (req: Request, res: Response): Promise<void> {
 }
 
 export async function setSample (req: Request, res: Response): Promise<void> {
-  const value: string = req.params.value ?? '[No Name]'
+  const value: string = req.params.value as string ?? '[No Name]'
 
   await RedisCache.setSampleCache(value)
 

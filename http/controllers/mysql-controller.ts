@@ -15,7 +15,7 @@ export async function list (req: Request, res: Response): Promise<void> {
 }
 
 export async function detail (req: Request, res: Response): Promise<void> {
-  const name: string = req.params.name ?? ''
+  const name: string = req.params.name as string ?? ''
 
   if (name === '') {
     throw new NotFoundError('Cat not exist')

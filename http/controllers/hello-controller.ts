@@ -11,7 +11,7 @@ export async function hello (req: Request, res: Response): Promise<void> {
   Logger.info('Log Info: hello controller')
   const helloDomain = new HelloDomain()
 
-  const name: string = req.params.name ?? '[No Name]'
+  const name: string = req.params.name as string ?? '[No Name]'
   const message: string = helloDomain.helloWithName(name)
 
   const helloResp: HelloResp = new HelloResp(name, message)
